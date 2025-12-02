@@ -1,12 +1,12 @@
 // components/PrimaryButton.tsx
 import { Pressable, Text } from "react-native";
 
-export default function PrimaryButton({ title, onPress }: { title: string; onPress: () => void }) {
+export default function PrimaryButton({ title, onPress, color }: { title: string; onPress: () => void, color?: string }) {
   return (
     <Pressable
       onPress={onPress}
       style={{
-        backgroundColor: "#4E6AF3",
+        backgroundColor: color || "#4E6AF3",
         padding: 16,
         borderRadius: 12,
         alignItems: "center",

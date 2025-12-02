@@ -7,12 +7,19 @@ import { darkTheme } from "../theme/darkTheme";
 import { useSleepTimer } from "../hooks/useSleepTimer";
 import { useNotifications } from "../hooks/useNotifications";
 
+interface SleepSession {
+  id: number;
+  start: number;
+  end: number;
+}
+
 export default function HomeScreen() {
-  const [sessions, setSessions] = useState([]);
+  const [sessions, setSessions] = useState<SleepSession[]>([]);
   const { startTime, running, start, stop } = useSleepTimer();
   useNotifications();
 
   const endSession = () => {
+    if (!startTime) return;
     setSessions(prev => [
       { start: startTime, end: Date.now(), id: prev.length + 1 },
       ...prev
@@ -24,11 +31,11 @@ export default function HomeScreen() {
     <View style={styles.container}>
 
       {!running && (
-        <PrimaryButton text="Начать сон" onPress={start} />
+        <PrimaryButton title="Начать сон" onPress={start} />
       )}
 
       {running && (
-        <PrimaryButton text="Закончить сон" onPress={endSession} color={darkTheme.danger} />
+        <PrimaryButton title="Закончить сон" onPress={endSession} color={darkTheme.danger} />
       )}
 
       <Text style={styles.title}>История сна</Text>

@@ -6,6 +6,16 @@ export function useSleepTimer() {
   const [startTime, setStartTime] = useState<number | null>(null);
   const [elapsed, setElapsed] = useState(0);
 
+  const start = () => {
+    setStartTime(Date.now());
+  };
+
+  const stop = () => {
+    setStartTime(null);
+  };
+
+  const running = startTime !== null;
+
   useEffect(() => {
     (async () => {
       const active = await getActiveSession();
@@ -29,5 +39,8 @@ export function useSleepTimer() {
   return {
     startTime,
     elapsed,
+    running,
+    start,
+    stop
   };
 }
