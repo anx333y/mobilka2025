@@ -3,8 +3,8 @@ import { darkTheme } from "../../theme/darkTheme";
 import { useSleepHormones } from "../../hooks/useSleepHormones";
 import HormoneBar from "../../components/HormoneBar";
 
-export default function HormonesScreen() {
-  const { melatonin, cortisol } = useSleepHormones();
+export default function HormonesScreen({start, end}) {
+  const { melatonin, cortisol } = useSleepHormones(start, end);
 
   return (
     <View style={styles.container}>

@@ -1,21 +1,11 @@
 import { Stack, Tabs } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { darkTheme } from "../theme/darkTheme";
+import { darkTheme, darkTheme1 } from "../theme/darkTheme";
 import { ThemeProvider } from "@react-navigation/native";
 
 export default function RootLayout() {
   return (
-    // <ThemeProvider value={{
-    //   dark: true,
-    //   colors: {
-    //     background: darkTheme.background,
-    //     card: darkTheme.card,
-    //     text: darkTheme.text,
-    //     primary: darkTheme.primary,
-    //     border: "#222"
-    //   }
-    // }}>
-    <>
+    <ThemeProvider value={darkTheme1}>
       <StatusBar style="light" />
       <Tabs
         screenOptions={{
@@ -32,7 +22,6 @@ export default function RootLayout() {
         <Tabs.Screen name="hormones" options={{ title: "Гормоны" }} />
         <Tabs.Screen name="settings" options={{ title: "Настройки" }} />
       </Tabs>
-    </>
-    // </ThemeProvider>
+    </ThemeProvider>
   );
 }

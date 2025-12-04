@@ -1,9 +1,8 @@
-export function useSleepHormones(hour = new Date().getHours()) {
-  // Melatonin: max at 02:00 (scale 0–100)
-  const melatonin = Math.max(0, 100 - Math.abs(hour - 2) * 20);
+import { getCortisolScore, getMelatoninScore } from "@/helpers/quality";
 
-  // Cortisol: max at 08:00
-  const cortisol = Math.max(0, 100 - Math.abs(hour - 8) * 12);
+export function useSleepHormones(start: number, end: number) {
+  const melatonin = getMelatoninScore(start) * 100;
+  const cortisol = getCortisolScore(end) * 100;
 
   return { melatonin, cortisol };
 }
