@@ -6,7 +6,7 @@ export default function SettingsScreen() {
   return (
     <ScreenWrapper>
       <ScrollView style={{ flex: 1, padding: 20 }}>
-        <Text style={{ fontSize: 24, fontWeight: "700", marginBottom: 20 }}>
+        <Text style={{ fontSize: 24, fontWeight: "700"}}>
           Настройки
         </Text>
 

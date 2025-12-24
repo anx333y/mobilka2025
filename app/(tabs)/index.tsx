@@ -53,9 +53,8 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, width: '100%', height: 100, padding: 20 },
+  container: { padding: 20 },
   title: { color: darkTheme.text, marginVertical: 16, fontSize: 20 },
   history: {
-    maxHeight: 240
   }
 });

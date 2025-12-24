@@ -16,7 +16,6 @@ export default function SleepSessionItem({ session }: { session: SleepSession })
         padding: 16,
         backgroundColor: isGoodSession ? darkTheme1.colors.accent : darkTheme1.colors.danger,
         borderRadius: 12,
-        marginVertical: 6,
       }}
     >
       <View>

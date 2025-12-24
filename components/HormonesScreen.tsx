@@ -17,6 +17,6 @@ export default function HormonesScreen({start, end}) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20 },
-  title: { color: darkTheme.text, fontSize: 24, marginBottom: 30 }
+  container: { flex: 1},
+  title: { color: darkTheme.text, fontSize: 24 }
 });
