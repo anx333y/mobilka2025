@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet } from "react-native";
-import { darkTheme } from "../../theme/darkTheme";
-import { useSleepHormones } from "../../hooks/useSleepHormones";
-import HormoneBar from "../../components/HormoneBar";
+import {useSleepHormones} from "@/hooks/useSleepHormones";
+import {StyleSheet, Text, View} from "react-native";
+import HormoneBar from "@/components/HormoneBar";
+import {darkTheme} from "@/theme/darkTheme";
 
 export default function HormonesScreen({start, end}) {
   const { melatonin, cortisol } = useSleepHormones(start, end);
@@ -17,6 +17,6 @@ export default function HormonesScreen({start, end}) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: darkTheme.background, padding: 20 },
+  container: { flex: 1, padding: 20 },
   title: { color: darkTheme.text, fontSize: 24, marginBottom: 30 }
 });

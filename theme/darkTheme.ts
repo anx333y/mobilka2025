@@ -5,7 +5,8 @@ export const darkTheme = {
   secondary: "#999999",
   primary: "#6E8BFF",
   accent: "#C77DFF",
-  danger: "#FF6B6B"
+  danger: "#FF6B6B",
+  backgroundMenu: '#697AC0'
 };
 
 // themes.ts
