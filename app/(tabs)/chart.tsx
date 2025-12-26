@@ -1,8 +1,7 @@
 import {StyleSheet, View, Text} from "react-native";
 import ScreenWrapper from "@/components/ScreenWrapper";
 import {hormonesData, percentData, sleepData} from "@/data/chartData";
-import {BarChart, LineChart, LegendComponent} from "react-native-gifted-charts";
-import { useFonts } from '@expo-google-fonts/coda';
+import {BarChart, LineChart} from "react-native-gifted-charts";
 
 const Coda = require('../../assets/fonts/Coda_800ExtraBold.ttf');
 const AXIS_COLOR = '#697AC0';
@@ -147,7 +146,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginHorizontal: 20,
     paddingVertical: 10,
-    paddingTop: 15,
+    paddingTop: 18,
     shadowColor: '#4C61B0',
     shadowOffset: {
       width: -5,  // тень смещена влево на 4 px
@@ -166,11 +165,10 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     shadowColor: '#4C61B0',
     shadowOffset: {
-      width: -5,  // тень смещена влево на 4 px
-      height: 5,  // тень смещена вниз на 4 px
+      width: -5,
+      height: 5,
     },
 
-    // Для Android (эквивалент тени)
     elevation: 5,
   },
   title: {
