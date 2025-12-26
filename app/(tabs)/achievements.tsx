@@ -1,4 +1,4 @@
-// app/sleep/achievments.tsx
+// app/sleep/achievements.tsx
 import {View, Text, ScrollView, FlatList, StyleSheet, Image} from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { getAllSessions } from "../../data/sleep";

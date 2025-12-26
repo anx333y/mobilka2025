@@ -28,19 +28,19 @@ export default function TabsLayout() {
             let iconSource;
             switch (route.name) {
               case 'chart':
-                iconSource = require('../../assets/tabsIcons/stats.png')
+                iconSource = require('../../assets/tabsIcons/stats.svg')
                 break;
               case 'index':
-                iconSource = focused ? require('../../assets/tabsIcons/home-active.jpg') : require('../../assets/tabsIcons/home.jpg');
+                iconSource = require('../../assets/tabsIcons/home.svg')
                 break;
               case 'hormones':
-                iconSource = require('../../assets/tabsIcons/details.png')
+                iconSource = require('../../assets/tabsIcons/cон.svg')
                 break;
               case 'settings':
-                iconSource = require('../../assets/tabsIcons/settings.png')
+                iconSource = require('../../assets/tabsIcons/settings.svg')
                 break;
               default:
-                iconSource = require('../../assets/tabsIcons/achievem.png');
+                iconSource = require('../../assets/tabsIcons/achievem.svg');
             }
             return (
               <View>
@@ -50,7 +50,7 @@ export default function TabsLayout() {
                   style={[
                     styles.tabsIcon,
                     {
-                      opacity: focused ? 1 : 0.6
+                      opacity: focused ? 1 : 0.7
                     }
                   ]}
                 />
@@ -73,14 +73,14 @@ export default function TabsLayout() {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    width: '100%',
   },
   container: {
     flex: 1,
   },
   tabsIcon: {
-    width: 58,
-    height: 58,
-    elevation: 5
+    flex: 1,
+    width: 56,
+    height: 56,
+    resizeMode: 'contain',
   }
 });
