@@ -1,5 +1,5 @@
 // app/sleep/achievments.tsx
-import {View, Text, ScrollView, FlatList, StyleSheet} from "react-native";
+import {View, Text, ScrollView, FlatList, StyleSheet, Image} from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { getAllSessions } from "../../data/sleep";
 import { useEffect, useState } from "react";
@@ -7,6 +7,7 @@ import ScreenWrapper from "@/components/ScreenWrapper";
 import {achievementsData} from "@/data/achievements";
 
 const Coda = require('../../assets/fonts/Coda_800ExtraBold.ttf');
+const img = require('../../assets/checkbox-svgrepo-com 1.svg');
 
 export default function achievements () {
   // const { id } = useLocalSearchParams();
@@ -38,20 +39,28 @@ export default function achievements () {
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
         renderItem={({ item }) => (
-          <View
-            style={[
-              styles.item,
-              item.isCompleted ? styles.completed : styles.incomplete,
-            ]}
-          >
-            <Text
+          <View style={{flexDirection: 'row', gap: 10}}>
+            <View
               style={[
-                styles.title,
-                item.isCompleted && styles.completedText,
+                styles.item,
+                item.isCompleted ? styles.completed : styles.incomplete,
               ]}
             >
-              {item.title}
-            </Text>
+              <Text
+                style={[
+                  styles.title,
+                  item.isCompleted && styles.completedText,
+                ]}
+              >
+                {item.title}
+              </Text>
+            </View>
+            <View style={[
+              styles.circle,
+              item.isCompleted && styles.completedCircle,
+            ]}>
+              {item.isCompleted ? <Image source={img}></Image> : null}
+            </View>
           </View>
         )}
       />
@@ -61,12 +70,12 @@ export default function achievements () {
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 30,
+    marginHorizontal: 16,
     marginVertical: 20
   },
   item: {
     height: 50,
-    width: "100%",
+    width: "85%",
     borderRadius: 40,
     marginVertical: 10,
     alignContent: 'center',
@@ -95,4 +104,19 @@ const styles = StyleSheet.create({
   completedText: {
     color: '#fff',
   },
+  circle: {
+    marginVertical: 10,
+    width: 50,
+    height: 50,
+    paddingTop: 5,
+    borderRadius: 50,
+    backgroundColor: '#ffffff',
+    borderColor: '#697AC0',
+  },
+  completedCircle: {
+    backgroundColor: '#697AC0',
+    borderColor: '#fff',
+    borderStyle: "solid",
+    borderWidth: 5
+  }
 });
