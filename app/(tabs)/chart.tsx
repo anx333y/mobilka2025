@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     alignSelf: 'center',
     fontFamily: Coda,
-    fontWeight: 'normal',
+    fontWeight: 'bold',
   },
   bar: {
     backgroundColor: '#ffffff',

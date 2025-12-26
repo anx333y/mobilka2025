@@ -62,8 +62,8 @@ export default function TabsLayout() {
           <Tabs.Screen name="chart" />
           <Tabs.Screen name="hormones" />
           <Tabs.Screen name="index" />
-          <Tabs.Screen name="achievements" />
           <Tabs.Screen name="settings" />
+          <Tabs.Screen name="achievements" />
         </Tabs>
       </ImageBackground>
     </SafeAreaView>

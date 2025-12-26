@@ -4,17 +4,20 @@ import EmptyState from "../components/EmptyState";
 import { SleepSession } from "@/types";
 import { darkTheme } from "@/theme/darkTheme";
 
+const Coda = require('../assets/fonts/Coda_800ExtraBold.ttf');
+
 const SleepHistory = ({sessions}: {sessions: SleepSession[]}) => {
   return (
-    <View style={styles.history}>
-      <Text style={styles.title}>История сна</Text>
+    <View>
+      <Text style={styles.title}>ИСТОРИЯ СНА</Text>
       {sessions.length === 0 ? (
-        <EmptyState text="Пока нет записей" />
+        <EmptyState/>
       ) : (
         <FlatList
-          data={sessions}
+          data={sessions.slice(0, 3)}
           keyExtractor={i => i.id.toString()}
           renderItem={({item}) => <SleepSessionItem session={item} />}
+          maxToRenderPerBatch={3}
         />
       )}
     </View>
@@ -22,10 +25,7 @@ const SleepHistory = ({sessions}: {sessions: SleepSession[]}) => {
 };
 
 const styles = StyleSheet.create({
-  title: { color: darkTheme.text, marginVertical: 16, fontSize: 20 },
-  history: {
-    maxHeight: 240
-  }
+  title: { color: darkTheme.text, marginBottom: 16, fontSize: 16, fontWeight: "bold", fontFamily: Coda, textAlign: "center" },
 });
 
 export default SleepHistory;

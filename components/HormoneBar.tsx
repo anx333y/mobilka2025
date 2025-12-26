@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet } from "react-native";
 import { darkTheme } from "../theme/darkTheme";
 
+const Coda = require('../assets/fonts/Coda_800ExtraBold.ttf');
+
 export default function HormoneBar({ title, value }) {
   return (
     <View style={styles.container}>
@@ -14,10 +16,10 @@ export default function HormoneBar({ title, value }) {
 
 const styles = StyleSheet.create({
   container: { marginVertical: 16 },
-  label: { color: darkTheme.text, marginBottom: 6 },
+  label: { color: darkTheme.text, marginBottom: 6, fontFamily: Coda, fontSize: 16, fontWeight: 'bold' },
   bar: {
     height: 12,
-    backgroundColor: "#333",
+    backgroundColor: "#ffffff",
     borderRadius: 6
   },
   fill: {
